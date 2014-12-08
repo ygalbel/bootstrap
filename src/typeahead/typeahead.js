@@ -129,7 +129,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
 
           //it might happen that several async queries were in progress if a user were typing fast
           //but we are interested only in responses that correspond to the current view value
-          var onCurrentRequest = (inputValue === modelCtrl.$viewValue);
+          var onCurrentRequest = (inputValue === modelCtrl.$viewValue) && modelCtrl.$dirty;
           if (onCurrentRequest && hasFocus) {
             if (matches.length > 0) {
 
